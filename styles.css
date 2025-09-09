@@ -1,0 +1,40 @@
+:root{
+  --bg:#0b1220; --fg:#e5e7eb; --muted:#94a3b8; --card:#0f172a; --line:#1f2937;
+  --accent:#6366f1; --ok:#10b981; --warn:#f59e0b; --bad:#ef4444;
+}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+header{padding:28px 20px;text-align:center;background:linear-gradient(135deg,#4e8ef7,#6a4ef7)}
+header h1{margin:0 0 6px} header p{margin:0;color:#eef2ff}
+section{max-width:1100px;margin:0 auto;padding:20px}
+.form{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.form input,.form select{padding:10px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
+.form button{padding:10px;border:0;border-radius:6px;background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
+#resetBtn{background:#334155}
+
+.controls{display:grid;gap:12px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters input,.filters select{padding:10px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
+.filters button,.filters .import{padding:10px 12px;border-radius:6px;background:#1f2937;color:#fff;border:1px solid var(--line);cursor:pointer}
+.filters .import input{display:none}
+
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line)}
+th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left}
+th{cursor:pointer;color:#c7d2fe}
+tbody tr:hover{background:#111827}
+
+.badge{padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700;display:inline-block}
+.pHigh{background:#312e81;color:#e0e7ff;border:1px solid #4338ca}
+.pMedium{background:#1f2937;color:#e5e7eb;border:1px solid #374151}
+.pLow{background:#0f172a;color:#cbd5e1;border:1px solid #334155}
+
+.sApplied{background:#1f2937;border:1px solid #334155}
+.sInterview{background:#064e3b;border:1px solid #10b981}
+.sOffer{background:#0b4a6f;border:1px solid #38bdf8}
+.sRejected{background:#4c0519;border:1px solid #ef4444}
+.sDraft{background:#3f3f46;border:1px solid #71717a}
+
+.actions button{margin-right:6px;padding:6px 8px;border:0;border-radius:6px;background:#334155;color:#fff;cursor:pointer}
+.actions .danger{background:#7f1d1d}
+
+footer{text-align:center;color:var(--muted);padding:16px}
+@media (max-width:900px){ .form{grid-template-columns:1fr 1fr} }
