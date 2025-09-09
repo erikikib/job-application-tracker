@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Job Application Tracker</h1>
+  <p>Track positions, status, priority, and dates — data stays in your browser.</p>
+</header>
+
+<section class="controls">
+  <form id="form" class="form">
+    <input id="position" placeholder="Position (e.g., Intern, AI Engineer)" required>
+    <input id="company" placeholder="Company (e.g., NVIDIA)" required>
+    <input id="location" placeholder="Location (e.g., Zurich)" required>
+    <select id="priority">
+      <option value="High">High</option>
+      <option value="Medium" selected>Medium</option>
+      <option value="Low">Low</option>
+    </select>
+    <select id="status">
+      <option>Applied</option>
+      <option>Interview</option>
+      <option>Offer</option>
+      <option>Rejected</option>
+      <option>Draft</option>
+    </select>
+    <input id="date" type="date">
+    <button id="saveBtn">Add</button>
+    <button id="resetBtn" type="button">Reset</button>
+  </form>
+
+  <div class="filters">
+    <input id="q" placeholder="Search company/position…">
+    <select id="fStatus">
+      <option value="">All Statuses</option>
+      <option>Applied</option>
+      <option>Interview</option>
+      <option>Offer</option>
+      <option>Rejected</option>
+      <option>Draft</option>
+    </select>
+    <select id="fPriority">
+      <option value="">All Priorities</option>
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+    </select>
+    <button id="exportCsv">Export CSV</button>
+    <button id="exportJson">Export JSON</button>
+    <label class="import">
+      Import JSON <input id="importJson" type="file" accept="application/json" hidden>
+    </label>
+  </div>
+</section>
+
+<section>
+  <table id="table">
+    <thead>
+      <tr>
+        <th data-sort="position">Position</th>
+        <th data-sort="company">Company</th>
+        <th data-sort="priority">Priority</th>
+        <th data-sort="location">Location</th>
+        <th data-sort="status">Status</th>
+        <th data-sort="applied">Applied Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<footer>
+  <small>Built by Erika Santos • Data stored locally in your browser</small>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
